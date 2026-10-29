@@ -1,0 +1,369 @@
+﻿.page {
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, rgba(112, 201, 107, 0.16), transparent 24%), linear-gradient(180deg, #f6faf5 0%, #edf7ff 100%);
+    color: var(--dark-text);
+}
+
+.navbar {
+    height: 80px;
+    background: rgba(255, 255, 255, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    border-bottom: 1px solid rgba(221, 232, 225, 0.9);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-family: 'Manrope', 'Inter', sans-serif;
+    font-size: clamp(1.5rem, 1.2rem + 0.7vw, 2rem);
+    font-weight: 800;
+    color: var(--forest-green);
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.navButton,
+.logoutButton {
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.92rem;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navButton {
+    background: rgba(22, 131, 75, 0.08);
+    color: var(--forest-green);
+    border: 1px solid rgba(22, 131, 75, 0.12);
+}
+
+.navButton:hover,
+.logoutButton:hover {
+    transform: translateY(-1px);
+}
+
+.logoutButton {
+    background: linear-gradient(135deg, #d14f4f, #bf3e3e);
+    color: var(--white);
+    box-shadow: 0 12px 24px rgba(191, 62, 62, 0.18);
+}
+
+.container {
+    width: min(1200px, 88%);
+    margin: 0 auto;
+    padding: 40px 0 60px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    gap: 20px;
+    padding: 1.4rem 1.6rem;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.smallTitle {
+    margin: 0 0 0.5rem;
+    color: var(--forest-green);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.header h1 {
+    margin: 0 0 0.5rem;
+    color: var(--dark-green);
+    font-size: clamp(2rem, 1.7rem + 1vw, 2.8rem);
+}
+
+.header p {
+    margin: 0;
+    color: var(--muted-text);
+}
+
+.backButton {
+    border: none;
+    background: linear-gradient(135deg, var(--forest-green), var(--agri-green));
+    color: var(--white);
+    padding: 0.8rem 1.3rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 12px 24px rgba(22, 131, 75, 0.18);
+}
+
+.orderGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+}
+
+.orderCard {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 24px;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.orderCard:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-strong);
+}
+
+.orderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(221, 232, 225, 0.8);
+}
+
+.orderHeader h2 {
+    margin: 0 0 0.45rem;
+    color: var(--dark-green);
+    font-size: 1.45rem;
+}
+
+.orderHeader small {
+    color: var(--muted-text);
+    word-break: break-all;
+}
+
+.status {
+    background: #fff3cd;
+    color: #856404;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.customerBox {
+    background: linear-gradient(180deg, rgba(112, 201, 107, 0.08), rgba(59, 130, 196, 0.04));
+    padding: 1rem;
+    border-radius: 14px;
+    margin-top: 1rem;
+    border-left: 4px solid var(--forest-green);
+}
+
+.customerBox h3 {
+    margin: 0 0 0.8rem;
+    color: var(--dark-green);
+    font-size: 1.05rem;
+}
+
+.customerBox p {
+    margin: 0.45rem 0;
+    color: var(--muted-text);
+    line-height: 1.6;
+}
+
+.customerBox strong {
+    color: var(--dark-text);
+}
+
+.details {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.details div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px dashed rgba(221, 232, 225, 0.8);
+}
+
+.details span {
+    color: var(--muted-text);
+    font-size: 0.9rem;
+}
+
+.details strong {
+    color: var(--dark-text);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.address {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(247, 248, 242, 0.92);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.address h3 {
+    margin: 0 0 0.5rem;
+    color: var(--dark-green);
+    font-size: 1rem;
+}
+
+.address p {
+    margin: 0;
+    color: var(--muted-text);
+    line-height: 1.7;
+}
+
+.date {
+    margin-top: 0.9rem;
+    color: var(--muted-text);
+    font-size: 0.83rem;
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        height: auto;
+        padding: 1rem 1.2rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page {
+        background:
+            linear-gradient(120deg, rgba(16, 28, 13, .97), rgba(35, 58, 24, .94)),
+            repeating-linear-gradient(78deg, rgba(181, 177, 83, .12) 0 2px, transparent 2px 20px);
+        color: #fff;
+    }
+    .navbar { background: rgba(16,29,13,.9); border-color: rgba(218,233,169,.22); }
+    .logo { color: #fff; }
+    .navButton { background: transparent; color: rgba(255,255,255,.8); border-color: rgba(255,255,255,.25); }
+    .logoutButton { background: #a8c85d; color: #17230e; box-shadow: 0 0 14px rgba(168,200,93,.3); }
+    .header,
+    .orderCard {
+        background: rgba(16,29,13,.88);
+        border-color: rgba(218,233,169,.25);
+        border-radius: 3px;
+        box-shadow: 8px 8px 0 rgba(9,18,7,.2);
+        animation: riseIn .5s ease both;
+    }
+    .smallTitle { color: #c2d883; }
+    .header h1,
+    .orderHeader h2 { color: #fff; }
+    .header p,
+    .orderHeader small,
+    .customerBox p,
+    .details span,
+    .date { color: rgba(255,255,255,.64); }
+    .backButton { border-radius: 2px; background: #a8c85d; color: #17230e; box-shadow: 0 0 14px rgba(168,200,93,.3); }
+    .orderCard { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .orderCard:hover { transform: translateY(-7px); border-color: #a8c85d; box-shadow: 0 0 20px rgba(168,200,93,.2), 12px 12px 0 rgba(9,18,7,.2); }
+    .status { border-radius: 2px; box-shadow: 0 0 10px currentColor; }
+    .customerBox { background: rgba(168,200,93,.08); border-color: #a8c85d; border-radius: 2px; }
+    .customerBox h3,
+    .address h3 { color: #d6e39e; }
+    .customerBox strong,
+    .details strong { color: #d6e39e; }
+    .details div { border-color: rgba(218,233,169,.18); }
+    .address { background: rgba(168,200,93,.08); border-color: rgba(168,200,93,.22); border-radius: 2px; }
+
+    .container {
+        width: min(92%, 1200px);
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .orderGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.page {
+    background:
+        radial-gradient(ellipse at 12% 5%, rgba(117,208,67,.11), transparent 30rem),
+        #08120c;
+    color: #f4faf1;
+}
+.navbar {
+    position: sticky;
+    top: 12px;
+    z-index: 20;
+    width: min(1320px, calc(100% - 40px));
+    height: auto;
+    min-height: 68px;
+    margin: 12px auto 0;
+    padding: 12px 20px;
+    border: 1px solid rgba(235,255,230,.13);
+    border-radius: 18px;
+    background: rgba(12,24,16,.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+.logo { color: #f2faed; }
+.navButton {
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 10px;
+    background: rgba(255,255,255,.045);
+    color: #e8f4e2;
+}
+.logoutButton { border-radius: 10px; background: rgba(255,255,255,.055); color: #f2d5cb; box-shadow: none; }
+.container { width: min(1220px, calc(100% - 48px)); padding-top: 30px; }
+.header,
+.orderCard {
+    border: 1px solid rgba(235,255,230,.13);
+    border-radius: 21px;
+    background: rgba(255,255,255,.06);
+    box-shadow: 0 20px 54px rgba(0,0,0,.2);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+.header h1,
+.orderHeader h2,
+.customerBox h3,
+.address h3 { color: #f2f8ee; }
+.header p,
+.orderHeader small,
+.customerBox p,
+.details span,
+.date,
+.address p { color: rgba(230,240,226,.67); }
+.smallTitle { color: #c7ff5e; }
+.backButton {
+    border: 1px solid rgba(199,255,94,.23);
+    border-radius: 10px;
+    background: rgba(199,255,94,.1);
+    color: #d9f7b8;
+    box-shadow: none;
+}
+.customerBox,
+.address {
+    border: 1px solid rgba(235,255,230,.1);
+    border-radius: 14px;
+    background: rgba(255,255,255,.045);
+}
+.customerBox { border-left: 3px solid #a9e95a; }
+.customerBox strong,
+.details strong { color: #f1f8ed; }
+.details div { border-color: rgba(255,255,255,.1); }
+.status { border: 1px solid rgba(199,255,94,.16); background: rgba(199,255,94,.09); color: #d6f5af; }
+
+@media (max-width: 640px) {
+    .navbar { top: 8px; width: calc(100% - 24px); margin-top: 8px; padding: 10px 12px; }
+    .container { width: calc(100% - 28px); padding-top: 22px; }
+}

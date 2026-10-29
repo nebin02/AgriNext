@@ -1,0 +1,115 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(7, 16, 6, .78);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999999;
+}
+
+.popup {
+    width: 400px;
+    max-width: 90%;
+
+    background: #101d0d;
+    border: 1px solid rgba(218,233,169,.3);
+    border-top: 3px solid #a8c85d;
+    border-radius: 3px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow: 14px 14px 0 rgba(0,0,0,.25), 0 24px 60px rgba(0,0,0,.4);
+    animation: riseIn .3s ease both;
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #a8c85d;
+    color: #17230e;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+    font-weight: bold;
+    animation: softPulse 2s ease-in-out infinite;
+}
+
+.popup h2 {
+    color: #d6e39e;
+
+    font-size: 28px;
+
+    margin: 10px 0;
+}
+
+.popup p {
+    color: rgba(255,255,255,.7);
+
+    font-size: 17px;
+
+    margin: 20px 0 25px;
+}
+
+.closeButton {
+    border: none;
+
+    background: #a8c85d;
+    color: #17230e;
+
+    padding: 12px 40px;
+
+    border-radius: 2px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    background: #c2d883;
+}
+
+.overlay { background: rgba(2,8,5,.76); }
+.popup {
+    max-width: min(440px, calc(100vw - 32px));
+    border: 1px solid rgba(235,255,230,.16);
+    border-radius: 22px;
+    background: rgba(16,31,21,.94);
+    box-shadow: 0 28px 80px rgba(0,0,0,.48);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    animation: none;
+}
+.icon {
+    border: 1px solid rgba(199,255,94,.28);
+    background: rgba(199,255,94,.12);
+    color: #c7ff5e;
+    animation: none;
+}
+.popup h2 { color: #f2f8ee; }
+.popup p { color: rgba(230,240,226,.72); }
+.closeButton {
+    min-width: 120px;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #d5ff80, #a4e94f);
+    color: #14210e;
+}

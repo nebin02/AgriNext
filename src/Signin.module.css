@@ -1,0 +1,843 @@
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.page {
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 2rem 1.2rem;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 18% 22%,
+            rgba(195, 52, 255, 0.16),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 82% 76%,
+            rgba(55, 239, 196, 0.14),
+            transparent 24%
+        ),
+        linear-gradient(
+            135deg,
+            #050b0a 0%,
+            #102016 52%,
+            #071315 100%
+        );
+}
+
+
+/* =====================================================
+   BACKGROUND DECORATION
+===================================================== */
+
+.page::before,
+.page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18rem;
+    height: 18rem;
+
+    border: 1px solid rgba(168, 200, 93, 0.18);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.page::before {
+    top: -8rem;
+    left: -8rem;
+
+    box-shadow:
+        0 0 60px rgba(168, 200, 93, 0.12),
+        inset 0 0 60px rgba(168, 200, 93, 0.08);
+}
+
+.page::after {
+    right: -9rem;
+    bottom: -8rem;
+
+    border-color: rgba(71, 239, 205, 0.2);
+
+    box-shadow:
+        0 0 80px rgba(71, 239, 205, 0.16),
+        inset 0 0 60px rgba(71, 239, 205, 0.1);
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+    max-width: 480px;
+
+    padding: 2.8rem 2.5rem;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(168, 200, 93, 0.5);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(21, 40, 24, 0.86),
+            rgba(5, 18, 17, 0.92)
+        );
+
+    box-shadow:
+        0 0 0 1px rgba(59, 255, 205, 0.14),
+        0 0 30px rgba(168, 200, 93, 0.18),
+        0 28px 70px rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(10px);
+
+    animation: authFloat 6s ease-in-out infinite;
+}
+
+
+/* Card shine */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.1),
+            transparent 25%,
+            transparent 74%,
+            rgba(91, 255, 211, 0.08)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 2rem;
+}
+
+
+.logo {
+    width: 56px;
+    height: 56px;
+
+    display: grid;
+    place-items: center;
+
+    margin: 0 auto 1rem;
+
+    border: 1px solid #a8c85d;
+
+    border-radius: 50%;
+
+    background: rgba(168, 200, 93, 0.12);
+
+    font-size: 1.8rem;
+
+    box-shadow:
+        0 0 12px rgba(168, 200, 93, 0.65),
+        inset 0 0 18px rgba(168, 200, 93, 0.22);
+}
+
+
+.header h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(
+            1.7rem,
+            1.3rem + 1vw,
+            2.4rem
+        );
+
+    letter-spacing: -0.03em;
+
+    text-shadow:
+        0 0 18px rgba(208, 255, 145, 0.28);
+}
+
+
+.header p {
+    margin-top: 0.55rem;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 0.86rem;
+}
+
+
+/* =====================================================
+   CUSTOMER / FARMER BUTTONS
+===================================================== */
+
+.userType {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0.6rem;
+
+    margin-bottom: 1.7rem;
+}
+
+
+.typeButton,
+.activeType {
+    padding: 0.8rem 0.65rem;
+
+    border-radius: 4px;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.typeButton {
+    color: rgba(255, 255, 255, 0.75);
+
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.24);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(83, 255, 211, 0.05);
+}
+
+
+.typeButton:hover {
+    border-color: #a8c85d;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 0 14px rgba(168, 200, 93, 0.3);
+
+    transform: translateY(-1px);
+}
+
+
+.activeType {
+    color: #17230e;
+
+    background: #a8c85d;
+
+    border: 1px solid #a8c85d;
+
+    box-shadow:
+        0 0 14px rgba(168, 200, 93, 0.4);
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.card h2 {
+    margin-bottom: 1.4rem;
+
+    color: #d6e39e;
+
+    text-align: center;
+
+    font-size: 1.05rem;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+
+/* =====================================================
+   INPUT GROUP
+===================================================== */
+
+.inputGroup {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.42rem;
+}
+
+
+.inputGroup label {
+    color: rgba(255, 255, 255, 0.76);
+
+    font-size: 0.73rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.inputGroup input {
+    width: 100%;
+
+    padding: 0.9rem 0.85rem;
+
+    color: #ffffff;
+
+    background: rgba(2, 13, 14, 0.48);
+
+    border: 1px solid rgba(136, 240, 189, 0.3);
+
+    border-radius: 4px;
+
+    outline: none;
+
+    box-shadow:
+        inset 0 0 18px rgba(0, 0, 0, 0.14);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.inputGroup input:focus {
+    border-color: #54f5c8;
+
+    box-shadow:
+        0 0 0 3px rgba(84, 245, 200, 0.1),
+        0 0 18px rgba(84, 245, 200, 0.34);
+}
+
+
+.inputGroup input::placeholder {
+    color: rgba(255, 255, 255, 0.38);
+}
+
+
+/* =====================================================
+   PASSWORD CONTAINER
+===================================================== */
+
+.passwordContainer {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.passwordContainer input {
+    padding-right: 3rem;
+}
+
+
+/* =====================================================
+   PASSWORD SHOW / HIDE
+===================================================== */
+
+.passwordToggle {
+    position: absolute;
+
+    right: 0.7rem;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    padding: 0.3rem;
+
+    color: #c2d883;
+
+    background: transparent;
+
+    border: 0;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.passwordToggle:hover {
+    color: #ffffff;
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
+}
+
+
+/* =====================================================
+   SIGN IN / MAIN BUTTON
+===================================================== */
+
+.signinButton {
+    width: 100%;
+
+    padding: 0.95rem;
+
+    margin-top: 0.45rem;
+
+    color: #17230e;
+
+    background:
+        linear-gradient(
+            100deg,
+            #a8c85d,
+            #d7ed84 48%,
+            #57f3c8
+        );
+
+    border: 0;
+
+    border-radius: 4px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 12px rgba(168, 200, 93, 0.5),
+        0 0 28px rgba(84, 245, 200, 0.18);
+
+    transition:
+        0.25s ease;
+}
+
+
+.signinButton:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 18px rgba(168, 200, 93, 0.75),
+        0 0 35px rgba(84, 245, 200, 0.35);
+}
+
+
+.signinButton:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =====================================================
+   FORGOT PASSWORD BUTTON
+===================================================== */
+
+.forgotPasswordButton {
+    border: none;
+
+    background: transparent;
+
+    color: #c2d883;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    font-size: 0.82rem;
+
+    transition: 0.25s ease;
+}
+
+
+.forgotPasswordButton:hover {
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px rgba(194, 216, 131, 0.5);
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message {
+    margin-top: 1rem;
+
+    color: #d6e39e;
+
+    text-align: center;
+
+    font-size: 0.84rem;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    animation: messageFade 0.3s ease;
+}
+
+
+/* =====================================================
+   SIGN UP TEXT
+===================================================== */
+
+.signupText {
+    margin-top: 1.5rem;
+
+    color: rgba(255, 255, 255, 0.58);
+
+    text-align: center;
+
+    font-size: 0.82rem;
+}
+
+
+.signupText a {
+    margin-left: 0.3rem;
+
+    color: #c2d883;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+
+.signupText a:hover {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   HOME LINK
+===================================================== */
+
+.homeLink {
+    display: block;
+
+    margin-top: 1rem;
+
+    color: #c2d883;
+
+    text-align: center;
+
+    font-size: 0.82rem;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+
+.homeLink:hover {
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px rgba(194, 216, 131, 0.5);
+}
+
+
+/* =====================================================
+   FORGOT PASSWORD DESCRIPTION
+===================================================== */
+
+.forgotDescription {
+    margin-bottom: 20px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    text-align: center;
+
+    font-size: 0.88rem;
+
+    line-height: 1.6;
+}
+
+
+.forgotDescription strong {
+    color: #d6e39e;
+}
+
+
+/* =====================================================
+   OTP INPUT
+===================================================== */
+
+.otpInput {
+    text-align: center;
+
+    font-size: 1.4rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5rem;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.backButton {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 12px;
+
+    color: #c2d883;
+
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+
+.backButton:hover {
+    color: #ffffff;
+
+    border-color: #a8c85d;
+
+    background: rgba(168, 200, 93, 0.08);
+
+    box-shadow:
+        0 0 12px rgba(168, 200, 93, 0.18);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes authFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-7px)
+            rotate(0.35deg);
+    }
+}
+
+
+@keyframes messageFade {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .page {
+        padding: 1.2rem 0.8rem;
+    }
+
+
+    .card {
+        padding: 2rem 1.2rem;
+
+        max-width: 100%;
+    }
+
+
+    .userType {
+        grid-template-columns: 1fr;
+    }
+
+
+    .header h1 {
+        font-size: 1.7rem;
+    }
+
+
+    .card h2 {
+        font-size: 0.95rem;
+    }
+
+
+    .inputGroup input {
+        padding: 0.85rem 0.75rem;
+    }
+
+
+    .signinButton {
+        padding: 0.9rem;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL SCREENS
+===================================================== */
+
+@media (max-width: 350px) {
+
+    .card {
+        padding: 1.6rem 1rem;
+    }
+
+
+    .logo {
+        width: 48px;
+        height: 48px;
+
+        font-size: 1.5rem;
+    }
+
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.page {
+    isolation: isolate;
+    background:
+        radial-gradient(ellipse at 18% 16%, rgba(121,211,69,.17), transparent 26rem),
+        radial-gradient(ellipse at 86% 82%, rgba(70,144,77,.13), transparent 28rem),
+        linear-gradient(145deg, #0b1710, #060d09);
+}
+
+.card {
+    width: min(100%, 500px);
+    padding: clamp(26px, 5vw, 44px);
+    border: 1px solid rgba(234,255,229,.16);
+    border-radius: 26px;
+    background: linear-gradient(145deg, rgba(24,43,29,.78), rgba(9,19,13,.77));
+    box-shadow: 0 28px 80px rgba(0,0,0,.4), inset 0 1px rgba(255,255,255,.08);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    animation: none;
+}
+
+.card::before { opacity: .42; }
+.header h1 { color: #f7fbf4; text-shadow: none; }
+.header p { color: rgba(229,240,225,.7); }
+.logo {
+    border-color: rgba(199,255,94,.36);
+    background: rgba(199,255,94,.1);
+    box-shadow: 0 0 30px rgba(199,255,94,.15), inset 0 0 18px rgba(199,255,94,.08);
+}
+.userType { gap: 10px; }
+.typeButton,
+.activeType { border-radius: 12px; }
+.typeButton { border-color: rgba(255,255,255,.17); background: rgba(255,255,255,.035); }
+.activeType { color: #111a0d; background: #c7ff5e; border-color: #c7ff5e; }
+.inputGroup label { color: rgba(239,247,235,.8); letter-spacing: .04em; }
+.inputGroup input,
+.inputGroup textarea {
+    border-radius: 12px;
+    border-color: rgba(235,255,230,.15);
+    background: rgba(3,11,7,.38);
+}
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+    border-color: rgba(199,255,94,.65);
+    box-shadow: 0 0 0 3px rgba(199,255,94,.1);
+}
+.signinButton {
+    min-height: 48px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #d5ff80, #a4e94f);
+    color: #14210e;
+    box-shadow: 0 12px 30px rgba(148,215,73,.18);
+}
+.signinButton:hover { background: #e0ff9a; transform: translateY(-2px); }
+.message { border-radius: 12px; }
+.forgotPasswordButton,
+.homeLink,
+.signupText a { color: #c7ff5e; }
+.passwordToggle { color: #c7ff5e; }
+.backButton { color: rgba(240,247,236,.78); border-color: rgba(255,255,255,.16); }
+
+@media (max-width: 520px) {
+    .page { padding: 18px 14px; }
+    .card { border-radius: 21px; }
+}

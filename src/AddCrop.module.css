@@ -1,0 +1,631 @@
+/* ========================================
+   MAIN PAGE
+======================================== */
+
+.container {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        135deg,
+        #effbef 0%,
+        #eefaff 100%
+    );
+}
+
+
+/* ========================================
+   MAIN CARD
+======================================== */
+
+.card {
+    width: 100%;
+    max-width: 520px;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border: 1px solid #dcece0;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(44, 93, 55, 0.10);
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.card h1 {
+    margin: 0;
+
+    text-align: center;
+
+    color: #183d25;
+
+    font-size: 28px;
+
+    font-weight: 800;
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.card > p {
+    margin: 8px 0 25px;
+
+    text-align: center;
+
+    color: #718076;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.card form {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.card label {
+    margin-bottom: 7px;
+
+    color: #31563a;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   NORMAL INPUTS + SELECT
+======================================== */
+
+.card input:not([type="file"]),
+.card select {
+    width: 100%;
+
+    height: 44px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 17px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d3e4d7;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #28462f;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* ========================================
+   INPUT FOCUS
+======================================== */
+
+.card input:not([type="file"]):focus,
+.card select:focus {
+    border-color: #62a66b;
+
+    background: #fbfffc;
+
+    box-shadow:
+        0 0 0 3px rgba(91, 161, 103, 0.12);
+}
+
+
+/* ========================================
+   PLACEHOLDER
+======================================== */
+
+.card input::placeholder {
+    color: #9aa99e;
+}
+
+
+/* ========================================
+   SELECT
+======================================== */
+
+.card select {
+    cursor: pointer;
+}
+
+
+/* ========================================
+   CROP IMAGE UPLOAD AREA
+======================================== */
+
+.card input[type="file"] {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 50px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 18px;
+
+    padding: 10px;
+
+    border: 1.5px dashed #8fbd99;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #f8fcf9;
+
+    color: #486750;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ========================================
+   FILE INPUT HOVER
+======================================== */
+
+.card input[type="file"]:hover {
+    background: #f0faf2;
+
+    border-color: #5f9f69;
+}
+
+
+/* ========================================
+   FILE INPUT FOCUS
+======================================== */
+
+.card input[type="file"]:focus {
+    border-color: #62a66b;
+
+    box-shadow:
+        0 0 0 3px rgba(91, 161, 103, 0.12);
+}
+
+
+/* ========================================
+   CHOOSE FILE BUTTON
+======================================== */
+
+.card input[type="file"]::file-selector-button {
+    margin-right: 12px;
+
+    padding: 8px 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #e1f2e5;
+
+    color: #347442;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* ========================================
+   CHOOSE FILE HOVER
+======================================== */
+
+.card input[type="file"]::file-selector-button:hover {
+    background: #d1ead6;
+
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   IMAGE PREVIEW CONTAINER
+======================================== */
+
+.imagePreviewContainer {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    background: #f7fcf8;
+
+    border: 1px solid #dcecdf;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px rgba(44, 93, 55, 0.05);
+}
+
+
+/* ========================================
+   IMAGE PREVIEW TITLE
+======================================== */
+
+.imagePreviewContainer p {
+    margin: 0 0 12px;
+
+    color: #31563a;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   IMAGE PREVIEW
+======================================== */
+
+.imagePreview {
+    display: block;
+
+    width: 100%;
+
+    max-width: 300px;
+
+    height: 190px;
+
+    margin: 0 auto;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 1px solid #d6e7da;
+
+    box-shadow:
+        0 6px 18px rgba(44, 93, 55, 0.10);
+}
+
+
+/* ========================================
+   ADD CROP BUTTON
+======================================== */
+
+.card form button {
+    width: 100%;
+
+    height: 45px;
+
+    margin-top: 3px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #347442,
+        #4e8743
+    );
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 16px rgba(52, 116, 66, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* ========================================
+   ADD BUTTON HOVER
+======================================== */
+
+.card form button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 20px rgba(52, 116, 66, 0.24);
+}
+
+
+/* ========================================
+   ADD BUTTON ACTIVE
+======================================== */
+
+.card form button:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   ADD BUTTON DISABLED
+======================================== */
+
+.card form button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ========================================
+   SUCCESS / ERROR MESSAGE
+======================================== */
+
+.message {
+    margin: 15px 0 0 !important;
+
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    background: #f0f8f2;
+
+    border: 1px solid #d3e9d7;
+
+    color: #347442 !important;
+
+    font-size: 13px !important;
+
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.backButton {
+    width: 100%;
+
+    height: 43px;
+
+    margin-top: 15px;
+
+    border: 1px solid #9fcfb0;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #326b3d;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* ========================================
+   BACK BUTTON HOVER
+======================================== */
+
+.backButton:hover {
+    background: #f0faf2;
+
+    border-color: #76b482;
+
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   RESPONSIVE - TABLET
+======================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 25px 15px;
+    }
+
+
+    .card {
+        padding: 25px 20px;
+
+        border-radius: 16px;
+    }
+
+
+    .card h1 {
+        font-size: 24px;
+    }
+
+
+    .imagePreview {
+        height: 170px;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE - MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+    .container {
+        padding: 20px 12px;
+    }
+
+
+    .card {
+        padding: 22px 16px;
+    }
+
+
+    .card h1 {
+        font-size: 22px;
+    }
+
+
+    .card input:not([type="file"]),
+    .card select {
+        height: 42px;
+    }
+
+
+    .card input[type="file"] {
+        min-height: 48px;
+
+        padding: 8px;
+    }
+
+
+    .imagePreview {
+        height: 150px;
+    }
+
+}
+
+.container {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 14% 10%, rgba(117,208,67,.13), transparent 28rem),
+        linear-gradient(145deg, #0b1710, #07100b);
+}
+
+.card {
+    max-width: 570px;
+    padding: clamp(24px, 5vw, 40px);
+    border: 1px solid rgba(234,255,229,.15);
+    border-radius: 24px;
+    background: rgba(255,255,255,.065);
+    box-shadow: 0 24px 70px rgba(0,0,0,.32);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.card h1 { color: #f4faef; }
+.card > p { color: rgba(229,240,225,.67); }
+.card label { color: rgba(239,247,235,.82); }
+.card input:not([type="file"]),
+.card select {
+    border-color: rgba(235,255,230,.15);
+    border-radius: 11px;
+    background: rgba(3,11,7,.36);
+    color: #f5faf3;
+}
+.card input:not([type="file"]):focus,
+.card select:focus {
+    border-color: rgba(199,255,94,.65);
+    background: rgba(3,11,7,.55);
+    box-shadow: 0 0 0 3px rgba(199,255,94,.1);
+}
+.card input::placeholder { color: rgba(232,242,228,.4); }
+.card input[type="file"] {
+    border-color: rgba(199,255,94,.34);
+    border-radius: 12px;
+    background: rgba(199,255,94,.045);
+    color: rgba(235,244,231,.7);
+}
+.card input[type="file"]::file-selector-button {
+    border-radius: 9px;
+    background: rgba(199,255,94,.16);
+    color: #d6ff9b;
+}
+.imagePreviewContainer {
+    border-color: rgba(235,255,230,.12);
+    border-radius: 15px;
+    background: rgba(255,255,255,.045);
+    box-shadow: none;
+}
+.imagePreviewContainer p { color: #dcebd6; }
+.imagePreview { border-color: rgba(255,255,255,.14); border-radius: 12px; }
+.card form button {
+    min-height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #d5ff80, #a4e94f);
+    color: #14210e;
+    box-shadow: 0 12px 28px rgba(148,215,73,.16);
+}
+.message { border-radius: 12px; }
+.backButton {
+    border-radius: 11px;
+    border-color: rgba(255,255,255,.16);
+    background: rgba(255,255,255,.055);
+    color: #eef8e8;
+}

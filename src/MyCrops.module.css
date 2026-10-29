@@ -1,0 +1,513 @@
+.container {
+    min-height: 100vh;
+    padding: 40px 24px 60px;
+    background:
+        radial-gradient(circle at top left, rgba(112, 201, 107, 0.16), transparent 26%),
+        linear-gradient(180deg, #f6faf5 0%, #edf7ff 100%);
+}
+
+.header {
+    max-width: 1120px;
+    margin: 0 auto 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 1.5rem 1.7rem;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.header h1 {
+    color: var(--dark-green);
+    margin-bottom: 0.3rem;
+    font-size: clamp(2rem, 1.7rem + 1vw, 2.8rem);
+}
+
+.header p {
+    color: var(--muted-text);
+}
+
+.addButton {
+    padding: 0.8rem 1.3rem;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--forest-green), var(--agri-green));
+    color: var(--white);
+    font-size: 0.96rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(22, 131, 75, 0.18);
+}
+
+.addButton:hover {
+    transform: translateY(-1px);
+}
+
+.loading {
+    text-align: center;
+    color: var(--forest-green);
+    font-weight: 700;
+    padding-top: 4rem;
+}
+
+.grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 1.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+}
+
+.card h2 {
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: var(--muted-text);
+    margin: 0.7rem 0;
+    line-height: 1.7;
+}
+
+.empty {
+    max-width: 520px;
+    margin: 60px auto;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 2.4rem;
+    text-align: center;
+    border-radius: 28px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+}
+
+.emptyIcon {
+    font-size: 4rem;
+}
+
+.empty h2 {
+    color: var(--dark-green);
+}
+
+.empty p {
+    color: var(--muted-text);
+    line-height: 1.7;
+}
+
+.empty button {
+    margin-top: 1.2rem;
+    padding: 0.8rem 1.3rem;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--forest-green), var(--agri-green));
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.backButton {
+    display: block;
+    margin: 35px auto 0;
+    padding: 0.8rem 1.3rem;
+    border: 1px solid rgba(22, 131, 75, 0.3);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--forest-green);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* ==========================================
+   CARD HEADER
+========================================== */
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.cardHeader h2 {
+    margin: 0;
+}
+
+
+/* ==========================================
+   EDIT BUTTON
+========================================== */
+
+.editButton {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #eaf6ed;
+    color: #2f743c;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.editButton:hover {
+    background: #d8efdd;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   MODAL OVERLAY
+========================================== */
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20, 45, 28, 0.45);
+
+    z-index: 1000;
+}
+
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.modal {
+    width: 100%;
+    max-width: 520px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    padding: 28px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================
+   MODAL HEADER
+========================================== */
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.modalHeader h2 {
+    margin: 0;
+    color: var(--dark-green);
+}
+
+
+/* ==========================================
+   CLOSE BUTTON
+========================================== */
+
+.closeButton {
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #eef6ef;
+
+    color: #315d3d;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    background: #dceee0;
+}
+
+
+/* ==========================================
+   FORM LABEL
+========================================== */
+
+.modal label {
+    display: block;
+
+    margin: 14px 0 7px;
+
+    color: #315d3d;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   FORM INPUTS
+========================================== */
+
+.modal input,
+.modal select {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d5e6d9;
+
+    border-radius: 10px;
+
+    background: #fafffb;
+
+    color: #24482d;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.modal input:focus,
+.modal select:focus {
+
+    border-color: #67a874;
+
+    box-shadow:
+        0 0 0 3px rgba(67, 131, 78, 0.1);
+}
+
+
+/* ==========================================
+   MODAL BUTTONS
+========================================== */
+
+.modalButtons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* CANCEL */
+
+.cancelButton {
+
+    padding: 11px 18px;
+
+    border: 1px solid #cbded0;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #52705a;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.cancelButton:hover {
+    background: #f2f7f3;
+}
+
+
+/* SAVE */
+
+.saveButton {
+
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        var(--forest-green),
+        var(--agri-green)
+    );
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.saveButton:hover {
+    transform: translateY(-1px);
+}
+
+
+.saveButton:disabled,
+.cancelButton:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .modal {
+
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+    .cardHeader {
+
+        align-items: flex-start;
+    }
+
+    .editButton {
+
+        flex-shrink: 0;
+    }
+
+    .modalButtons {
+
+        flex-direction: column;
+    }
+
+    .cancelButton,
+    .saveButton {
+
+        width: 100%;
+    }
+}
+
+.container {
+    background:
+        radial-gradient(ellipse at 12% 6%, rgba(117,208,67,.12), transparent 30rem),
+        linear-gradient(145deg, #0b1710, #07100b);
+    color: #f5faf3;
+}
+
+.header,
+.card,
+.empty {
+    border: 1px solid rgba(235,255,230,.13);
+    border-radius: 21px;
+    background: rgba(255,255,255,.06);
+    box-shadow: 0 20px 54px rgba(0,0,0,.2);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.header h1,
+.card h2,
+.empty h2 { color: #f3faef; }
+.header p,
+.card p,
+.empty p { color: rgba(230,240,226,.68); }
+.loading { color: #c7ff5e; }
+.addButton,
+.empty button {
+    border-radius: 11px;
+    background: linear-gradient(135deg, #d5ff80, #a4e94f);
+    color: #14210e;
+    box-shadow: 0 10px 25px rgba(148,215,73,.16);
+}
+.backButton {
+    border-color: rgba(255,255,255,.17);
+    border-radius: 11px;
+    background: rgba(255,255,255,.05);
+    color: #d9f4ca;
+}
+.editButton {
+    border: 1px solid rgba(199,255,94,.23);
+    border-radius: 10px;
+    background: rgba(199,255,94,.1);
+    color: #d5f6ae;
+}
+.modalOverlay { background: rgba(2,8,5,.74); }
+.modal {
+    border: 1px solid rgba(235,255,230,.16);
+    border-radius: 22px;
+    background: rgba(16,31,21,.94);
+    box-shadow: 0 30px 90px rgba(0,0,0,.5);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+.modalHeader h2 { color: #f1f8ed; }
+.modal label { color: rgba(239,247,235,.78); }
+.modal input,
+.modal select {
+    border-color: rgba(235,255,230,.15);
+    border-radius: 10px;
+    background: rgba(2,10,6,.45);
+    color: #f5faf3;
+}
+.modal input:focus,
+.modal select:focus {
+    border-color: rgba(199,255,94,.65);
+    box-shadow: 0 0 0 3px rgba(199,255,94,.1);
+}
+.closeButton {
+    background: rgba(255,255,255,.08);
+    color: #e8f5e2;
+}
+.cancelButton {
+    border-color: rgba(255,255,255,.16);
+    border-radius: 10px;
+    background: rgba(255,255,255,.045);
+    color: #e8f5e2;
+}
+.saveButton {
+    border-radius: 10px;
+    background: linear-gradient(135deg, #d5ff80, #a4e94f);
+    color: #14210e;
+}
