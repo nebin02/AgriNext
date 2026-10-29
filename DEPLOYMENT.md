@@ -6,7 +6,7 @@
 - `src` is now stored as ordinary files in the frontend repository rather than as an unmapped Git submodule, so a GitHub/Vercel checkout contains the application source.
 - The backend is a separate Express 5 Node.js project. `index.js` starts the API, `routes.js` defines the endpoints, and `db.js` connects Mongoose to MongoDB.
 - Crop images are uploaded by the backend to a public Supabase Storage bucket. The Supabase service-role key stays on the backend.
-- The frontend uses `VITE_API_URL` for all API requests. Local development defaults to `http://localhost:3000`; Vercel must set the deployed API origin.
+- All frontend API requests use the shared Axios client in `src/api.js`. It reads Vite's `VITE_API_URL`, trims trailing slashes, and falls back to the production Render API origin. Set `VITE_API_URL=http://localhost:3000` in a local `.env` file when running the backend locally.
 
 ## Before a public production launch
 
@@ -20,9 +20,9 @@ Set frontend values in Vercel and backend values in the Node host (Render below)
 
 | Variable | Hosting location | Purpose |
 | --- | --- | --- |
-| `VITE_API_URL` | Vercel | Public HTTPS origin of the backend, without a trailing slash or route path |
+| `VITE_API_URL` | Vercel | `https://agrinext-git-trfk.onrender.com` (backend origin only; no route path) |
 | `MONGO_URI` | Backend host | MongoDB Atlas connection string |
-| `FRONTEND_URL` | Backend host | Exact Vercel site origin(s), comma-separated if needed; no trailing slash |
+| `FRONTEND_URL` | Render | `https://agri-next-fzg36tb5m-np-5eb3.vercel.app` (comma-separate additional allowed origins; no trailing slash) |
 | `SMTP_HOST` | Backend host | SMTP server used for signup/password OTP email |
 | `SMTP_PORT` | Backend host | SMTP port (commonly `587`) |
 | `SMTP_USER` | Backend host | SMTP username |
@@ -93,9 +93,9 @@ The health endpoint returns HTTP 200 only while MongoDB is connected. The crop u
 1. Push the `AgriNext` frontend repository to GitHub.
 2. Import that repository into Vercel. Use the repository root (`.`) as the project root.
 3. Use Node.js 22.12 or newer and confirm the Vite settings: build command `npm run build`, output directory `dist`, install command `npm ci`.
-4. Add `VITE_API_URL` with the Render HTTPS origin in Vercel's environment settings for Production (and Preview if preview deployments should call the same backend).
+4. Add `VITE_API_URL` with the value `https://agrinext-git-trfk.onrender.com` in Vercel's environment settings for Production (and Preview if preview deployments should call the same backend). This is a public URL, not a secret.
 5. Deploy. The root `vercel.json` sends deep links to the SPA entry point, so routes such as `/signin`, `/signup`, `/farmer-dashboard`, and `/customer-crops` can be opened or refreshed directly.
-6. If the Vercel domain changes, update the backend's `FRONTEND_URL` and redeploy/restart the backend.
+6. Set the Render `FRONTEND_URL` environment variable to `https://agri-next-fzg36tb5m-np-5eb3.vercel.app` (without a trailing slash). Include additional preview origins as comma-separated values only if they need API access. Redeploy/restart the backend after changing it.
 
 ## GitHub push commands
 

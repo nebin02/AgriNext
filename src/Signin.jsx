@@ -1218,7 +1218,7 @@ const Signin = () => {
                         styles.homeLink
                     }
                 >
-                    â† Back to Home
+                    Back to Home
                 </Link>
 
             </div>

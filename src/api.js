@@ -1,7 +1,12 @@
 import axios from "axios";
 
+export const API_BASE_URL = (
+    import.meta.env.VITE_API_URL?.trim() ||
+    "https://agrinext-git-trfk.onrender.com"
+).replace(/\/+$/, "");
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL?.trim().replace(/\/+$/, "") || "http://localhost:3000"
+    baseURL: API_BASE_URL
 });
 
 export default api;
